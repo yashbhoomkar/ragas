@@ -1,0 +1,40 @@
+{
+  "tables": {
+    "customers": {
+      "columns": {
+        "CustomerId": "Unique ID for the customer",
+        "FirstName": "Customer's first name",
+        "LastName": "Customer's last name",
+        "Email": "Customer's email address",
+        "Country": "Customer's country"
+      }
+    },
+    "invoices": {
+      "columns": {
+        "InvoiceId": "Unique ID for the invoice",
+        "CustomerId": "ID of the customer who paid the invoice",
+        "InvoiceDate": "Date when the invoice was created",
+        "Total": "Total amount of the invoice"
+      }
+    },
+    "invoice_items": {
+      "columns": {
+        "InvoiceLineId": "Unique ID for the invoice line",
+        "InvoiceId": "ID of the invoice",
+        "TrackId": "ID of the track sold",
+        "UnitPrice": "Price per unit",
+        "Quantity": "Number of units sold"
+      }
+    },
+    "tracks": {
+      "columns": {
+        "TrackId": "Unique ID of the track",
+        "Name": "Name of the track",
+        "AlbumId": "ID of the album",
+        "MediaTypeId": "Type of media",
+        "GenreId": "Genre of the track",
+        "Composer": "Name of the composer"
+      }
+    }
+  }
+}
