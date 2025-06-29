@@ -1,6 +1,8 @@
+# rag/query_generator.py
+
 import ollama
 
-def generate_sql(schema_text, user_question, model="llama3"):
+def generate_sql(schema_text, enhanced_question, model="llama3"):
     prompt = f"""
 You are an advanced AI system that specializes in translating user questions into precise and executable SQL queries for a SQLite3 database.
 
@@ -40,14 +42,14 @@ Schema:
 {schema_text}
 
 User Question:
-{user_question}
+{enhanced_question}
 
 ---
 
 Output:
 Only return the generated SQL query, nothing else.
 """
-
+    #print("debugging print--------------------" , enhanced_question)
     response = ollama.chat(
         model=model,
         messages=[{"role": "user", "content": prompt}]
